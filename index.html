@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aarav & Meera | Save the Date</title>
+<meta name="description" content="Join us as we celebrate our wedding. Save the date!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff8f0;--ink:#3b2a2a;--accent:#c8553d;--gold:#d9a441;--soft:#f6e3d3;--card:#ffffff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:700;line-height:1.2}
+section{padding:72px 20px;max-width:760px;margin:0 auto;text-align:center}
+.eyebrow{font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+
+/* cover */
+.cover{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;max-width:none;
+ background:radial-gradient(circle at 20% 20%,#ffe3c9,transparent 55%),radial-gradient(circle at 80% 80%,#f7c9b8,transparent 55%),var(--bg)}
+.cover h1{font-size:clamp(40px,10vw,84px);color:var(--accent)}
+.cover p{margin:14px 0 28px;font-weight:300}
+.btn{display:inline-block;background:var(--accent);color:#fff;border:0;padding:14px 30px;border-radius:999px;font:500 15px 'Poppins',sans-serif;cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(200,85,61,.3)}
+
+/* story */
+.moment{margin:0 auto;padding:56px 20px;max-width:760px;opacity:0;transform:translateY(30px);transition:all .8s ease}
+.moment.show{opacity:1;transform:none}
+.art{height:260px;border-radius:24px;margin:22px 0;display:flex;align-items:center;justify-content:center;font-size:84px;
+ background:linear-gradient(135deg,var(--soft),#fbd5c3);box-shadow:0 10px 30px rgba(120,60,40,.12);overflow:hidden}
+.art img{width:100%;height:100%;object-fit:cover}
+.moment h2{font-size:clamp(28px,6vw,42px)}
+.moment p{max-width:520px;margin:10px auto 0;font-weight:300}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{background:var(--card);border-radius:20px;padding:28px 20px;box-shadow:0 6px 24px rgba(120,60,40,.08)}
+.card .face{font-size:56px}
+.card h3{margin:8px 0;font-size:22px}
+.card p{font-size:14px;font-weight:300}
+@media(max-width:600px){.about{grid-template-columns:1fr}}
+
+/* date */
+.date{background:var(--ink);color:#fff;max-width:none;border-radius:0}
+.date h2{font-size:clamp(34px,8vw,60px);color:var(--gold);margin:8px 0}
+.count{display:flex;gap:14px;justify-content:center;margin-top:30px;flex-wrap:wrap}
+.count div{background:rgba(255,255,255,.08);border-radius:16px;padding:16px 18px;min-width:78px}
+.count b{display:block;font:700 34px 'Playfair Display',serif;color:var(--gold)}
+.count span{font-size:11px;letter-spacing:.15em;text-transform:uppercase;opacity:.8}
+
+/* rsvp */
+form{background:var(--card);padding:28px 22px;border-radius:22px;box-shadow:0 6px 24px rgba(120,60,40,.08);text-align:left;margin-top:24px}
+label{display:block;font-size:13px;margin:14px 0 6px;font-weight:500}
+input[type=text],input[type=number],textarea{width:100%;padding:12px 14px;border:1.5px solid #ead6c6;border-radius:12px;font:inherit;background:#fffdfa}
+input:focus,textarea:focus{outline:none;border-color:var(--accent)}
+.choices{display:flex;gap:10px;flex-wrap:wrap}
+.choices label{flex:1;min-width:140px;margin:0;padding:12px;border:1.5px solid #ead6c6;border-radius:12px;text-align:center;cursor:pointer}
+.choices input{display:none}
+.choices input:checked+span{color:var(--accent);font-weight:600}
+.choices label:has(input:checked){border-color:var(--accent);background:#fff1ea}
+form .btn{width:100%;margin-top:22px}
+footer{padding:40px 20px;text-align:center;font-size:13px;opacity:.7}
+</style>
+</head>
+<body>
+
+<!-- ============ EDIT YOUR DETAILS HERE ============ -->
+<script>
+const CONFIG = {
+  bride: "Meera",
+  groom: "Aarav",
+  // Wedding date and time in IST (format: YYYY-MM-DDTHH:MM:SS+05:30)
+  weddingDate: "2027-03-14T12:00:00+05:30",
+  dateText: "14 March 2027",
+  // WhatsApp number for RSVPs, country code + number, no + or spaces
+  whatsappNumber: "919999999999",
+  // Story moments. Add "img" (e.g. "photos/first-trip.jpg") to use a real photo instead of the emoji.
+  moments: [
+    {label:"WHERE IT BEGAN", title:"College", text:"Where we met and became best friends.", emoji:"🎓"},
+    {label:"MILES APART, STILL TOGETHER", title:"Long distance", text:"We waited for calls and talked for hours. Even apart, we were always together.", emoji:"📞"},
+    {label:"OUR LITTLE ESCAPE", title:"Long drives", text:"We switched off from the world, turned up the music and enjoyed every mile.", emoji:"🚗"},
+    {label:"OUR FIRST LONG TRIP", title:"Udaipur", text:"Getting lost together among old palaces and little alleys.", emoji:"🏰"},
+    {label:"OUR UNPLANNED RITUAL", title:"Goa", text:"Every year we end up back here, chilling, eating and soaking up the peace.", emoji:"🏖️"},
+    {label:"THE BIG MOMENT", title:"And we said yes!", text:"The clouds cleared just in time.", emoji:"💍"}
+  ],
+  aboutGroom: {title:"Game on.", text:"A little stubborn, always up for a challenge, and has a fun fact ready whether anyone asked or not."},
+  aboutBride: {title:"Art, heart, and a little attitude.", text:"Loves art, loves food, and always shows up for her people."},
+  closing: "We've made memories in so many places, but our favourite ones always included the people we love. Come hungry, bring your dancing shoes, and help us make this a story we'll tell forever."
+};
+</script>
+<!-- ================================================ -->
+
+<section class="cover" id="top">
+  <div class="eyebrow">AN INVITATION TO OUR STORY</div>
+  <h1 id="names"></h1>
+  <p>A little journey through the places we love.</p>
+  <a class="btn" href="#story">Open our invitation</a>
+</section>
+
+<div id="story"></div>
+
+<section>
+  <div class="eyebrow">A LITTLE ABOUT US</div>
+  <h2 style="margin-bottom:28px">The people behind the story.</h2>
+  <div class="about">
+    <div class="card"><div class="face">🤵</div><div class="eyebrow" id="gName"></div><h3 id="gTitle"></h3><p id="gText"></p></div>
+    <div class="card"><div class="face">👰</div><div class="eyebrow" id="bName"></div><h3 id="bTitle"></h3><p id="bText"></p></div>
+  </div>
+  <p id="closing" style="margin-top:36px;font-weight:300"></p>
+</section>
+
+<section class="date">
+  <div class="eyebrow" style="color:var(--gold)">SAVE THE DATE</div>
+  <h2 id="dateText"></h2>
+  <p>We're getting married.</p>
+  <div class="count">
+    <div><b id="d">0</b><span>Days</span></div>
+    <div><b id="h">0</b><span>Hours</span></div>
+    <div><b id="m">0</b><span>Minutes</span></div>
+    <div><b id="s">0</b><span>Seconds</span></div>
+  </div>
+</section>
+
+<section id="rsvp">
+  <div class="eyebrow">WILL YOU JOIN US?</div>
+  <h2>RSVP</h2>
+  <p style="font-weight:300;margin-top:8px">We'd love to celebrate with you. More wedding details to follow.</p>
+  <form id="rsvpForm">
+    <label for="name">Your name</label>
+    <input type="text" id="name" required placeholder="Full name">
+    <label>Can you make it?</label>
+    <div class="choices">
+      <label><input type="radio" name="resp" value="joyfully accepts" checked><span>🎉 Joyfully accepts</span></label>
+      <label><input type="radio" name="resp" value="regretfully declines"><span>😔 Regretfully declines</span></label>
+    </div>
+    <label for="guests">Number of guests (including you)</label>
+    <input type="number" id="guests" min="1" max="10" value="1">
+    <label for="note">A note for the couple (optional)</label>
+    <textarea id="note" rows="3"></textarea>
+    <button class="btn" type="submit">Send RSVP on WhatsApp</button>
+  </form>
+</section>
+
+<footer id="foot"></footer>
+
+<script>
+const C = CONFIG;
+document.title = `${C.groom} & ${C.bride} | Save the Date`;
+document.getElementById('names').textContent = `${C.groom} & ${C.bride}`;
+document.getElementById('dateText').textContent = C.dateText;
+document.getElementById('foot').textContent = `With love, ${C.groom} & ${C.bride}`;
+document.getElementById('closing').textContent = C.closing;
+document.getElementById('gName').textContent = 'MEET ' + C.groom.toUpperCase();
+document.getElementById('bName').textContent = 'MEET ' + C.bride.toUpperCase();
+document.getElementById('gTitle').textContent = C.aboutGroom.title;
+document.getElementById('gText').textContent = C.aboutGroom.text;
+document.getElementById('bTitle').textContent = C.aboutBride.title;
+document.getElementById('bText').textContent = C.aboutBride.text;
+
+// story moments
+const story = document.getElementById('story');
+C.moments.forEach(m => {
+  const el = document.createElement('div');
+  el.className = 'moment';
+  const art = m.img ? `<img src="${m.img}" alt="${m.title}">` : m.emoji;
+  el.innerHTML = `<div class="eyebrow">${m.label}</div><h2>${m.title}</h2><div class="art">${art}</div><p>${m.text}</p>`;
+  story.appendChild(el);
+});
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); }), {threshold:.2});
+document.querySelectorAll('.moment').forEach(el => io.observe(el));
+
+// countdown
+const target = new Date(C.weddingDate).getTime();
+function tick(){
+  let diff = Math.max(0, target - Date.now());
+  const d = Math.floor(diff/864e5); diff -= d*864e5;
+  const h = Math.floor(diff/36e5); diff -= h*36e5;
+  const m = Math.floor(diff/6e4); diff -= m*6e4;
+  const s = Math.floor(diff/1e3);
+  document.getElementById('d').textContent = d;
+  document.getElementById('h').textContent = String(h).padStart(2,'0');
+  document.getElementById('m').textContent = String(m).padStart(2,'0');
+  document.getElementById('s').textContent = String(s).padStart(2,'0');
+}
+tick(); setInterval(tick, 1000);
+
+// RSVP -> opens WhatsApp with a ready message (no server needed)
+document.getElementById('rsvpForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const resp = document.querySelector('input[name=resp]:checked').value;
+  const guests = document.getElementById('guests').value;
+  const note = document.getElementById('note').value.trim();
+  let msg = `Hi! This is ${name}. I ${resp} for the wedding on ${C.dateText}. Guests: ${guests}.`;
+  if (note) msg += ` Note: ${note}`;
+  window.open(`https://wa.me/${C.whatsappNumber}?text=${encodeURIComponent(msg)}`, '_blank');
+});
+</script>
+</body>
+</html>
